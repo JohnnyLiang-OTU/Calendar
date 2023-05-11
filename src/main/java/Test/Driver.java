@@ -13,13 +13,6 @@ public class Driver extends Application
         gui.display();
     }
     public static void main(String[] args) {
-        Calendar calendar = new Calendar();
-        Entry entry1 = new Entry(LocalDate.of(0, 1, 10), 10);
-//        System.out.println(entry1.toString());
-        Entry entry2 = new Entry(LocalDate.of(0, 1, 21), 10);
-//        System.out.println(entry1.within(entry2));
-        calendar.addEvent(entry1);
-        calendar.addEvent(entry2);
         launch(args);
     }
 }

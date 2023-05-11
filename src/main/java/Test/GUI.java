@@ -1,6 +1,8 @@
 package Test;
 
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.geometry.Pos;
@@ -43,10 +45,17 @@ public class GUI{
         LocalDate firstDayOfMonth = LocalDate.now().withDayOfMonth(1); // Goes from current date to current date with day at 1. (2023-05-10 -> 2023-05-01)
         int daysInMonth = LocalDate.now().lengthOfMonth();             // How many days in a month
         int dayOfWeek = firstDayOfMonth.getDayOfWeek().getValue();     // Gets the weekday of the first day of month.
+        int[] holder = new int[1];
         for(int j = 1; j <= daysInMonth; j++)
         {
+            holder[0] = j;
             Button button = new Button(Integer.toString(j));
-            button.setOnAction(e -> FormWindow.displayForm());
+            button.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+                    FormWindow.displayForm(holder[0]);
+                }
+            });
 
             int row = (j + dayOfWeek - 2) / 7 + 1;
             int col = (j + dayOfWeek - 2) % 7;

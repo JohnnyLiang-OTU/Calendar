@@ -1,23 +1,21 @@
 package Test;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Entry {
-    LocalDate start;
-    LocalDate end;
+    LocalDateTime start;
+    LocalDateTime end;
+    String description;
 
-    Entry(LocalDate start, LocalDate end) {
-        this.start = start;
-        this.end = end;
-    }
-
-    Entry(LocalDate start, int dayDuration)
+    Entry(LocalDateTime start, int durationHours, String description)
     {
         this.start = start;
-        this.end = this.start.plusDays(dayDuration);
+        this.end = start.plusHours(durationHours);
+        this.description = description;
     }
 
-    public boolean within(Entry newEntry) // Check whether 2 entries are ha ving clashing times
+    public boolean within(Entry newEntry) // Check whether 2 entries are having clashing times
     {
         if(this.start.isBefore(newEntry.end) && this.end.isAfter(newEntry.start))
         {
@@ -28,8 +26,8 @@ public class Entry {
 
     public String toString()
     {
-        return "DATE: " + this.start.toString()
-                + "\nENDS: " + this.end.toString();
+        return "DATE: " + this.start
+                + "\nENDS: " + this.end;
     }
 }
 
