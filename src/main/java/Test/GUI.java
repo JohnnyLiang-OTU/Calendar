@@ -45,15 +45,15 @@ public class GUI{
         LocalDate firstDayOfMonth = LocalDate.now().withDayOfMonth(1); // Goes from current date to current date with day at 1. (2023-05-10 -> 2023-05-01)
         int daysInMonth = LocalDate.now().lengthOfMonth();             // How many days in a month
         int dayOfWeek = firstDayOfMonth.getDayOfWeek().getValue();     // Gets the weekday of the first day of month.
-        int[] holder = new int[1];
+
         for(int j = 1; j <= daysInMonth; j++)
         {
-            holder[0] = j;
+            final int holder = j;
             Button button = new Button(Integer.toString(j));
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-                    FormWindow.displayForm(holder[0]);
+                    FormWindow.displayForm(holder);
                 }
             });
 

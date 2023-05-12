@@ -54,10 +54,12 @@ public class FormWindow {
                 String userSelection = comboBox.getValue();
                 int hour = Integer.parseInt(userSelection.substring(0, 2));
                 int minute = Integer.parseInt(userSelection.substring(3));
-                LocalDateTime ldate = LocalDate.now().atTime(hour, minute);
+                int year = LocalDate.now().getYear();
+                int month = LocalDate.now().getMonthValue();
+                LocalDate ldate = LocalDate.of(year, month, dayNumber);
                 int duration = Integer.parseInt(durationForm.getText());
                 String description = descriptionForm.getText();
-                Entry entry = new Entry(ldate, duration, description); //
+                Entry entry = new Entry(ldate.atTime(hour, minute), duration, description); //
                 Calendar.addEvent(entry);
                 windowForm.close();
             }
