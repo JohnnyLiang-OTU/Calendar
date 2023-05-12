@@ -10,12 +10,14 @@ Initially, I was planning to make a calendar and a to-do list app in one project
 
 ### How far have I gotten with this project?
 ![alt text](https://github.com/JohnnyLiang-OTU/Calendar/blob/master/finalProduct.png?raw=true)
-This is what I have accomplished so far. 
-Once the program runs, the GUI will run and display the buttons (<) and (>) and a basic calendar layout that shows the weekdays and has buttons for each day of the month.
+This is what I have accomplished so far. <br>
+Once the program runs, the GUI will run and display the buttons (<) and (>) and a basic calendar layout that shows the weekdays and has buttons for each day of the month.<br>
 The (<) (>) buttons will, respectively, go to the previous and next month. It will also update the position of the buttons according to this new month.
+<br>
 The buttons for each day of the month, once pressed, will open a new window called FORM with the fields Duration and Description, and a combo box Start.
 This button basically allows the user to create a time event which will start at the selected time, last the selected duration, and have a description.
-Once the submit button is clicked, all this information will be stored in a Calendar.java and be displayed in the terminal. Unfortunately, I haven't implemented a record
+Once the submit button is clicked, all this information will be stored in a Calendar.java and be displayed in the terminal. 
+<br>Unfortunately, I haven't implemented a record
 feature to keep track of all the events added after the program is closed.
 
 ### Why I stopped?
