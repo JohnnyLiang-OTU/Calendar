@@ -1,4 +1,4 @@
-#Calendar
+# Calendar
  
 **Last update made on: May 12, 2023.**
 Initially, I was planning to make a calendar and a to-do list app in one project, however, the calendar itself presented many challenges -which I will detail later on- that made me not continue working on this project.
